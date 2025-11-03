@@ -152,7 +152,6 @@ body {
     background-image: url('images/hero-2.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     overflow: hidden;
 }
 

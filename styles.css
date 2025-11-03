@@ -1,0 +1,720 @@
+/* リセット & 基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #d4af37;
+    --color-secondary: #2a2a2a;
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-bg: #fff;
+    --color-bg-dark: #1a1a1a;
+    --font-serif: 'Noto Serif JP', serif;
+    --font-sans: 'Noto Sans JP', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    line-height: 1.8;
+    background-color: var(--color-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.logo-main {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.logo-sub {
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--color-primary);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.btn-reserve-nav {
+    padding: 10px 24px;
+    border: 1px solid var(--color-primary);
+    border-radius: 25px;
+    color: var(--color-primary) !important;
+}
+
+.btn-reserve-nav:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary) !important;
+}
+
+.btn-reserve-nav::after {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* ヒーローセクション */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    background-image: url('images/hero-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(212, 175, 55, 0.03) 2px,
+            rgba(212, 175, 55, 0.03) 4px
+        );
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-title-main {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 120px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.hero-title-sub {
+    display: block;
+    font-size: 24px;
+    letter-spacing: 8px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.hero-text {
+    font-size: 18px;
+    margin-bottom: 50px;
+    opacity: 0.9;
+    letter-spacing: 2px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 18px 50px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
+    animation: scrollAnimation 2s infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* セクション共通 */
+section {
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-family: var(--font-serif);
+}
+
+.section-subtitle {
+    font-size: 14px;
+    color: var(--color-text-light);
+    letter-spacing: 2px;
+}
+
+/* コンセプト */
+.concept {
+    background-color: #fafafa;
+}
+
+.concept-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.concept-text h3 {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--color-secondary);
+}
+
+.concept-text p {
+    margin-bottom: 20px;
+    line-height: 2;
+    color: var(--color-text-light);
+}
+
+.concept-image,
+.interior-image,
+.access-map {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.concept-image img,
+.interior-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-placeholder svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* メニュー */
+.menu {
+    background-color: var(--color-bg-dark);
+    color: #fff;
+}
+
+.menu .section-title {
+    color: var(--color-primary);
+}
+
+.menu .section-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.menu-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+}
+
+.menu-card-image svg,
+.menu-card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-card-content {
+    padding: 25px;
+}
+
+.menu-card-content h3 {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.menu-card-content p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.menu-price {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.menu-note {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+}
+
+/* 店内 */
+.interior {
+    background-color: #fafafa;
+}
+
+.interior-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.interior-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.interior-item.reverse {
+    direction: rtl;
+}
+
+.interior-item.reverse > * {
+    direction: ltr;
+}
+
+.interior-text h3 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--color-secondary);
+}
+
+.interior-text p {
+    line-height: 2;
+    color: var(--color-text-light);
+}
+
+.interior-image svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* アクセス */
+.access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.access-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.info-item h3 {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+    border-left: 3px solid var(--color-primary);
+    padding-left: 15px;
+}
+
+.info-item p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+.access-map svg,
+.access-map iframe {
+    width: 100%;
+    height: 400px;
+    display: block;
+    border-radius: 8px;
+}
+
+/* 予約 */
+.reservation {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: #fff;
+}
+
+.reservation .section-title {
+    color: var(--color-primary);
+}
+
+.reservation .section-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.reservation-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reservation-text {
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.reservation-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    gap: 5px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.btn-phone {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+}
+
+.btn-secondary:hover .btn-phone {
+    color: var(--color-secondary);
+}
+
+/* フッター */
+.footer {
+    background-color: var(--color-bg-dark);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.footer-logo .logo-main {
+    font-size: 48px;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-info p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--color-primary);
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 72px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 72px);
+        background-color: rgba(26, 26, 26, 0.98);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 50px 0;
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hero-title-main {
+        font-size: 72px;
+    }
+
+    .hero-title-sub {
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+    .concept-content,
+    .interior-item,
+    .access-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .interior-item.reverse {
+        direction: ltr;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-main {
+        font-size: 56px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .concept-text h3,
+    .interior-text h3 {
+        font-size: 24px;
+    }
+}

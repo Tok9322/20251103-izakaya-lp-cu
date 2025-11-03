@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粋 -IKI- 創作居酒屋</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <span class="logo-main">粋</span>
+                <span class="logo-sub">IKI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#concept">コンセプト</a></li>
+                <li><a href="#menu">メニュー</a></li>
+                <li><a href="#interior">店内</a></li>
+                <li><a href="#access">アクセス</a></li>
+                <li><a href="#reservation" class="btn-reserve-nav">ご予約</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-title-main">粋</span>
+                <span class="hero-title-sub">創作居酒屋 IKI</span>
+            </h1>
+            <p class="hero-text">伝統と革新が織りなす、大人の隠れ家</p>
+            <a href="#reservation" class="btn-primary">ご予約はこちら</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- コンセプト -->
+    <section id="concept" class="concept">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">CONCEPT</h2>
+                <p class="section-subtitle">コンセプト</p>
+            </div>
+            <div class="concept-content">
+                <div class="concept-text">
+                    <h3>和の心、モダンな感性</h3>
+                    <p>
+                        「粋 -IKI-」は、日本の伝統的な居酒屋文化に現代的なエッセンスを加えた創作居酒屋です。
+                    </p>
+                    <p>
+                        厳選された旬の食材を使用し、職人の技と創意工夫により、見た目も味も楽しめる逸品をご提供いたします。
+                    </p>
+                    <p>
+                        落ち着いた空間で、大切な人との時間をゆったりとお過ごしください。
+                    </p>
+                </div>
+                <div class="concept-image">
+                    <img src="images/wano-kukan.jpg" alt="和の空間 - 障子と庭園が見える落ち着いた店内">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- メニュー -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">MENU</h2>
+                <p class="section-subtitle">お品書き</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="menu-card-image">
+                        <img src="images/sashimi.jpg" alt="鮮魚の刺身盛り合わせ - 竹籠に美しく盛り付けられた新鮮な刺身">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>鮮魚の刺身盛り合わせ</h3>
+                        <p>市場直送の新鮮な魚介を職人が丁寧に捌きます</p>
+                        <span class="menu-price">¥2,800〜</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-image">
+                        <img src="images/sumibiyaki_yakitori.jpg" alt="備長炭焼き串焼き - じっくり焼き上げた香ばしい焼き鳥">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>備長炭焼き 串焼き各種</h3>
+                        <p>備長炭でじっくり焼き上げた香ばしい串焼き</p>
+                        <span class="menu-price">¥380〜</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-image">
+                        <img src="images/kisetsu-ryouri.jpg" alt="季節の創作料理 - 旬の食材を使った芸術的な一皿">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>季節の創作料理</h3>
+                        <p>旬の食材を使った、ここでしか味わえない逸品</p>
+                        <span class="menu-price">¥1,500〜</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-image">
+                        <img src="images/sake.jpg" alt="厳選日本酒・焼酎 - 全国から取り寄せた銘酒">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>厳選日本酒・焼酎</h3>
+                        <p>全国から取り寄せた銘酒を多数ご用意</p>
+                        <span class="menu-price">¥800〜</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-note">
+                <p>※価格は税込表示です。仕入れ状況により内容が変更になる場合がございます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 店内紹介 -->
+    <section id="interior" class="interior">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">INTERIOR</h2>
+                <p class="section-subtitle">店内のご案内</p>
+            </div>
+            <div class="interior-content">
+                <div class="interior-item">
+                    <div class="interior-image">
+                        <img src="images/counter-2.jpg" alt="カウンター席 - 職人の技を間近で見られる特等席">
+                    </div>
+                    <div class="interior-text">
+                        <h3>カウンター席</h3>
+                        <p>職人の技を間近でご覧いただける特等席。一人飲みやデートにも最適です。</p>
+                    </div>
+                </div>
+                <div class="interior-item reverse">
+                    <div class="interior-image">
+                        <img src="images/koshitsu.jpg" alt="個室 - プライベートな和の空間">
+                    </div>
+                    <div class="interior-text">
+                        <h3>個室（2〜8名様）</h3>
+                        <p>プライベートな空間で、接待やご家族でのお食事をお楽しみいただけます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセス -->
+    <section id="access" class="access">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ACCESS</h2>
+                <p class="section-subtitle">アクセス・店舗情報</p>
+            </div>
+            <div class="access-content">
+                <div class="access-info">
+                    <div class="info-item">
+                        <h3>住所</h3>
+                        <p>〒150-0002<br>東京都渋谷区渋谷1-2-3 粋ビル B1F</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>アクセス</h3>
+                        <p>JR渋谷駅 徒歩3分<br>東京メトロ銀座線 渋谷駅 徒歩2分</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>営業時間</h3>
+                        <p>月〜金：17:00〜24:00（L.O. 23:00）<br>
+                        土日祝：17:00〜23:00（L.O. 22:00）<br>
+                        定休日：不定休</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>お問い合わせ</h3>
+                        <p>TEL: 03-1234-5678<br>
+                        Email: info@iki-izakaya.jp</p>
+                    </div>
+                </div>
+                <div class="access-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7477581773634!2d139.6992913758425!3d35.65858007258451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5c0b1e7e07%3A0x5c5f6f7f7f7f7f7f!2z5riL6Kab6aeF!5e0!3m2!1sja!2sjp!4v1699000000000!5m2!1sja!2sjp" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 予約 -->
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">RESERVATION</h2>
+                <p class="section-subtitle">ご予約</p>
+            </div>
+            <div class="reservation-content">
+                <p class="reservation-text">
+                    お電話またはオンラインにてご予約を承っております。<br>
+                    個室のご予約は2日前までにお願いいたします。
+                </p>
+                <div class="reservation-buttons">
+                    <a href="tel:03-1234-5678" class="btn-secondary">
+                        <span>お電話でのご予約</span>
+                        <span class="btn-phone">03-1234-5678</span>
+                    </a>
+                    <a href="#" class="btn-primary">オンライン予約</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-main">粋</span>
+                    <span class="logo-sub">IKI</span>
+                </div>
+                <div class="footer-info">
+                    <p>〒150-0002 東京都渋谷区渋谷1-2-3 粋ビル B1F</p>
+                    <p>TEL: 03-1234-5678</p>
+                    <p>営業時間: 17:00〜24:00（月〜金） / 17:00〜23:00（土日祝）</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Twitter</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 創作居酒屋 粋 -IKI-. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

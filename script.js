@@ -83,3 +83,23 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+// トップに戻るボタン
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+// スクロール時にボタンの表示/非表示を切り替え
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+});
+
+// ボタンクリックでトップに戻る
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});

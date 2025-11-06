@@ -627,6 +627,45 @@ section {
     color: rgba(255, 255, 255, 0.5);
 }
 
+/* トップに戻るボタン */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(212, 175, 55, 0.6);
+}
+
+.scroll-to-top span {
+    line-height: 1;
+}
+
 /* レスポンシブ */
 @media (max-width: 768px) {
     .hamburger {
@@ -700,6 +739,14 @@ section {
 
     .footer-social {
         justify-content: center;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
     }
 }
 
